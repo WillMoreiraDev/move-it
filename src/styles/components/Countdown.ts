@@ -59,6 +59,7 @@ export const CountDownStyle = styled.div`
     }
   }
   button {
+    position: relative;
     width: 100%;
     height: 80px;
     display: flex;
@@ -86,7 +87,6 @@ export const CountDownStyle = styled.div`
       font-size: 1.25rem;
       color: #666666;
       pointer-events: none;
-      animation: ${fadeUp} 0.3s forwards;
       &:after {
         content: '';
         height: 4px;
@@ -94,8 +94,8 @@ export const CountDownStyle = styled.div`
         bottom: 0;
         left: 0;
         background: #4cd62b;
+        width: 100%;
         border-radius: 0px 0px 5px 5px;
-        animation: ${effectLine} 0.6s forwards;
       }
     }
     &.btn-init {
@@ -107,6 +107,21 @@ export const CountDownStyle = styled.div`
     &.btn-close {
       background: #ffffff;
       color: #666666;
+      & > div {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 4px;
+        background: #dcdde0;
+        border-radius: 0px 0px 5px 5px;
+        & > div {
+          height: 4px;
+          background: rgb(77, 216, 43);
+          border-radius: 0px 0px 5px 5px;
+          transition: linear 1s;
+        }
+      }
       &:hover {
         background: #e83f5b;
         color: #ffffff;

@@ -14,6 +14,7 @@ export default function CountDown() {
     seconds,
     hasFinished,
     isActive,
+    barButtonCompleted,
     startCountdown,
     resetCountdown
   } = useContext(CountdownContext)
@@ -48,6 +49,9 @@ export default function CountDown() {
           ) : (
             <button className="btn-close" onClick={resetCountdown}>
               Abandonar ciclo <IconClose />
+              <div>
+                <div style={{ width: `${barButtonCompleted}%` }}></div>
+              </div>
             </button>
           )}
         </>
