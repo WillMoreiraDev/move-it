@@ -1,4 +1,15 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+import { fadeUp } from '../components/ChallengeBox'
+
+export const effectLine = keyframes`
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+`
 
 export const CountDownStyle = styled.div`
   .countdown {
@@ -75,15 +86,16 @@ export const CountDownStyle = styled.div`
       font-size: 1.25rem;
       color: #666666;
       pointer-events: none;
+      animation: ${fadeUp} 0.3s forwards;
       &:after {
         content: '';
-        width: 100%;
         height: 4px;
         position: absolute;
         bottom: 0;
         left: 0;
         background: #4cd62b;
         border-radius: 0px 0px 5px 5px;
+        animation: ${effectLine} 0.6s forwards;
       }
     }
     &.btn-init {

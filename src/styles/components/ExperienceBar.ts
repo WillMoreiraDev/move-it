@@ -1,10 +1,13 @@
 import styled from 'styled-components'
 
+import { fadeLeft } from '../pages/Home'
+
 export const ExperienceBarStyle = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 8.125rem;
+  animation: ${fadeLeft} 0.6s forwards;
   & > div {
     position: relative;
     flex: 1;

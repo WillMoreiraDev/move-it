@@ -1,4 +1,18 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+
+import { fadeLeft, fadeRight } from '../pages/Home'
+
+export const fadeUp = keyframes`
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+`
 
 export const ChallengeBoxStyle = styled.div`
   width: 100%;
@@ -38,6 +52,7 @@ export const ChallengeBoxStyle = styled.div`
     height: 100%;
     display: flex;
     flex-direction: column;
+    animation: ${fadeUp} 0.3s forwards;
     header {
       width: 100%;
       max-width: 340px;
@@ -98,12 +113,14 @@ export const ChallengeBoxStyle = styled.div`
           transition: background-color 0.3s;
           &.buttonFailed {
             background: #e83f5b;
+            animation: ${fadeLeft} 0.6s forwards;
             &:hover {
               background: #e4062b;
             }
           }
           &.buttonComplete {
             background: #4cd62b;
+            animation: ${fadeRight} 0.6s forwards;
             &:hover {
               background: #42bf24;
             }

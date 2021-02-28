@@ -1,6 +1,18 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 import Flowers from '../../assets/flowers.png'
+
+import { fadeUp } from '../components/ChallengeBox'
+
+export const EffectShow = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`
 
 export const ModalLevelUpStyle = styled.div`
   position: fixed;
@@ -14,6 +26,7 @@ export const ModalLevelUpStyle = styled.div`
   z-index: 2020;
   background: rgb(242 243 245 / 0.1);
   backdrop-filter: blur(8px);
+  animation: ${EffectShow} 0.3s forwards;
   .modal {
     position: relative;
     background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
@@ -25,6 +38,7 @@ export const ModalLevelUpStyle = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    animation: ${fadeUp} 0.3s forwards;
     button {
       border: none;
       background: transparent;

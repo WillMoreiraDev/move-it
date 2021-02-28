@@ -1,4 +1,28 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+
+export const fadeLeft = keyframes`
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+`
+
+export const fadeRight = keyframes`
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+`
 
 export const Container = styled.div`
   width: 100%;
@@ -24,4 +48,10 @@ export const SectionMainStyle = styled.section`
   grid-template-columns: 389px 1fr;
   grid-gap: 100px;
   align-items: center;
+  .leftContainer {
+    animation: ${fadeLeft} 0.5s forwards;
+  }
+  .rightContainer {
+    animation: ${fadeRight} 0.5s forwards;
+  }
 `
